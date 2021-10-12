@@ -53,7 +53,7 @@
                                     <div class="col-lg-12">
 
                                         <div class="under19-text text-center mt-3">
-                                            <h3>Canditatura per Edusogno Academy</h3>
+                                            <h3>Candidatura per Edusogno Academy</h3>
                                             <p class="mt-3">Ci vogliono meno di 2 minuti. Scoprirai subito se avrai superato la selezione!</p>
                                         </div>
                                     </div>
