@@ -31,20 +31,20 @@
             parent_mail VARCHAR(255) NOT NULL,
             reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
             )";
-            
+
             if ($conn->query($table1) === FALSE) {
                   echo "<h1>Error creating table: </h1>" . $conn->error;
             }
-      
+
       $table2 = "CREATE TABLE IF NOT EXISTS regions (
             id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            name VARCHAR(100) NOT NULL)";
+            name VARCHAR(100) UNIQUE NOT NULL)";
 
             if ($conn->query($table2) === FALSE) {
                   echo "<h1>Error creating table: </h1>" . $conn->error;
             }
 
-      $upload_csv = "LOAD DATA INFILE '/srv/http/edu_form/regions.csv' INTO TABLE regions
+      $upload_csv = "LOAD DATA INFILE '/srv/http/edu_form/db/regions.csv' IGNORE INTO TABLE regions
                   FIELDS TERMINATED BY ','
                   LINES TERMINATED BY '\n'
                   (name)";
