@@ -15,7 +15,7 @@
 
       include "db/db_connection.php";
 
-      $table2 = "CREATE TABLE IF NOT EXISTS users (
+      $table1 = "CREATE TABLE IF NOT EXISTS users (
             id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(50) NOT NULL,
             surname VARCHAR(100) NOT NULL,
@@ -32,6 +32,21 @@
             reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
             )";
             
+            if ($conn->query($table1) === FALSE) {
+                  echo "<h1>Error creating table: </h1>" . $conn->error;
+            }
+      
+      $table2 = "CREATE TABLE IF NOT EXISTS regions (
+            id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(100) NOT NULL)";
+
             if ($conn->query($table2) === FALSE) {
                   echo "<h1>Error creating table: </h1>" . $conn->error;
             }
+
+      $upload_csv = "LOAD DATA INFILE '/srv/http/edu_form/regions.csv' INTO TABLE regions
+                  FIELDS TERMINATED BY ','
+                  LINES TERMINATED BY '\n'
+                  (name)";
+
+      $upload_regions = mysqli_query($conn, $upload_csv);

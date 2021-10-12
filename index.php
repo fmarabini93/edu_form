@@ -101,7 +101,7 @@
                                         <div class="col-6 formInputs">
                                             <div class="form-group mb-0">
                                                 <label for="">Qual è il tuo nome?</label>
-                                                <input type="text" class="form-control w-75 shadow-none" name="name">
+                                                <input type="text" class="form-control w-75 shadow-none" name="name" required>
                                             </div>
                                             <div class="form-group mb-0">
                                                 <label for="" class="mt-3">Qual è il tuo cognome?</label>
@@ -168,9 +168,21 @@
                                                 <!-- <input type="text" class="form-control w-75 shadow-none"> -->
                                             </div>
                                             <div class="form-group mb-0">
+                                                <?php
+                                                    $regions = [];
+                                                    $sql = "SELECT * FROM regions";
+                                                    $result = mysqli_query($conn, $sql);
+                                                    while ($row = $result->fetch_assoc()) {
+                                                        $regions[] = $row['name'];
+                                                    };
+                                                ?>
                                                 <label for="" class="mt-3">In quale regione si trova la tua scuola?</label>
                                                 <select name="region" class="form-control w-75 shadow-none" id="">
-                                                    <option value="Seleziona">Seleziona</option>
+                                                    <?php
+                                                        foreach($regions as $region) {
+                                                            echo "<option value='$region'>$region</option>";
+                                                        } 
+                                                    ?>
                                                 </select>
                                             </div>
                                             <div class="form-group mb-0">
