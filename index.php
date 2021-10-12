@@ -96,7 +96,7 @@
                                         Inserisci i tuoi dati e invia la tua <br> candidatura! 🎓
                                     </h1>
                                 </div>
-                                <form method="post" class="form11 pt-0">
+                                <div class="form11 pt-0">
                                     <div class="row">
                                         <div class="col-6 formInputs">
                                             <div class="form-group mb-0">
@@ -132,24 +132,16 @@
                                         </div>
                                     </div>
                                     <input type="submit" name="Submit" class="btn btn-success shadow-none mt-3 mb-5" id="nextStep" value="CONTINUA">
-                                </form>
+                                </div>
                                 <?php
                                     if (isset($_POST['Submit'])) {
-                                    $_SESSION['name'] = $_POST['name'];
-                                    $_SESSION['surname'] = $_POST['surname'];
-                                    $_SESSION['email'] = $_POST['email'];
+                                        $_SESSION['name'] = $_POST['name'];
+                                        $_SESSION['surname'] = $_POST['surname'];
+                                        $_SESSION['email'] = $_POST['email'];
                                     }
-                                    // Store the session in a variable after the submit - otherwise it will be forgotten on refresh
                                     $name = $_SESSION['name'];
                                     $surname = $_SESSION['surname'];
                                     $email = $_SESSION['email'];
-                                    // check if session exists
-                                    if(isset($name)) {
-                                    echo $name;
-                                    }
-                                    else {
-                                    echo 'no name entered...';
-                                    }
                                 ?>
                             </div>
                         </div>
@@ -251,7 +243,7 @@
                                                 <input type="text" class="form-control w-75 shadow-none">
                                             </div>
 
-                                            <button class="btn btn-success shadow-none mt-4 mb-5">INVIA</button>
+                                            <input type="submit" class="btn btn-success shadow-none mt-4 mb-5" value="INVIA">
                                         </div>
                                     </div>
                                 </form>
