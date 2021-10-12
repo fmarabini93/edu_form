@@ -20,6 +20,15 @@
             name VARCHAR(50) NOT NULL,
             surname VARCHAR(100) NOT NULL,
             email VARCHAR(255) NOT NULL,
+            number VARCHAR(50) NOT NULL,
+            region VARCHAR(100) NULL,
+            province VARCHAR(100) NULL,
+            municipality VARCHAR(100) NULL,
+            school VARCHAR(100) NOT NULL,
+            school_year SMALLINT NOT NULL,
+            avg_vote SMALLINT NOT NULL,
+            passions VARCHAR(255) NOT NULL,
+            parent_mail VARCHAR(255) NOT NULL,
             reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
             )";
             
