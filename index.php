@@ -29,7 +29,7 @@
                     <div class="col-sm-12 col-md-12 col-lg-11">
                         <nav class="navbar navbar-light bg-transparent py-4 px-0">
                             <a class="navbar-brand" href="#">
-                                <img src="./Images/logo_green 1.svg" alt="">
+                                <img src="./img/logo_green 1.svg" alt="">
                             </a>
                             <div class="nav-btn text-center">
                                 <button class="btn btn-dark ">LOG IN</button>
@@ -101,15 +101,15 @@
                                         <div class="col-6 formInputs">
                                             <div class="form-group mb-0">
                                                 <label for="">Qual è il tuo nome?</label>
-                                                <input type="text" class="form-control w-75 shadow-none" name="name" required>
+                                                <input type="text" class="form-control w-75 shadow-none" name="name" id="name">
                                             </div>
                                             <div class="form-group mb-0">
                                                 <label for="" class="mt-3">Qual è il tuo cognome?</label>
-                                                <input type="text" class="form-control w-75 shadow-none" name="surname">
+                                                <input type="text" class="form-control w-75 shadow-none" name="surname" id="surname">
                                             </div>
                                             <div class="form-group mb-0">
                                                 <label for="" class="mt-3">Qual è il tuo indirizzo email?</label>
-                                                <input type="text" class="form-control w-75 shadow-none" name="email">
+                                                <input type="text" class="form-control w-75 shadow-none" name="email" id="email">
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -177,7 +177,7 @@
                                                     };
                                                 ?>
                                                 <label for="" class="mt-3">In quale regione si trova la tua scuola?</label>
-                                                <select name="region" class="form-control w-75 shadow-none" id="">
+                                                <select name="region" class="form-control w-75 shadow-none" required>
                                                     <?php
                                                         foreach($regions as $region) {
                                                             echo "<option value='$region'>$region</option>";
@@ -187,53 +187,53 @@
                                             </div>
                                             <div class="form-group mb-0">
                                                 <label for="" class="mt-3">In quale provincia si trova la tua scuola?</label>
-                                                <select name="province" class="form-control w-75 shadow-none" id="">
+                                                <select name="province" class="form-control w-75 shadow-none">
                                                     <option value="Seleziona">Seleziona</option>
                                                 </select>
                                             </div>
                                             <div class="form-group mb-0">
                                                 <label for="" class="mt-3">In quale comune si trova la tua scuola?</label>
-                                                <select name="municipality" class="form-control w-75 shadow-none" id="">
+                                                <select name="municipality" class="form-control w-75 shadow-none">
                                                     <option value="Seleziona">Seleziona</option>
                                                 </select>
                                             </div>
                                             <div class="form-group mb-0">
                                                 <label for="" class="mt-3">Come si chiama la tua scuola?</label>
-                                                <input type="text" name="school" class="form-control w-75 shadow-none">
+                                                <input type="text" name="school" class="form-control w-75 shadow-none" required>
                                             </div>
                                             <div class="radio1 mr-3">
                                                 <label for="" class="mt-3 d-block">A quale anno scolastico sei?</label>
                                                 <label class="customcheckboxContainer">
                                                     <span class="customCheckBox">
-                                                        <input type="radio" id="coursename" name="Numberoptions" value="1">
+                                                        <input type="radio" id="schoolyear" name="Numberoptions" value="1" required>
                                                         <span class="checkmark rounded-circle borderGrn"></span>
                                                     </span>
                                                     <small class="mt-2 ml-4">1°</small>
                                                 </label>
                                                 <label class="customcheckboxContainer ml-2">
                                                     <span class="customCheckBox">
-                                                        <input type="radio" id="coursename" name="Numberoptions" value="2">
+                                                        <input type="radio" id="schoolyear" name="Numberoptions" value="2">
                                                         <span class="checkmark rounded-circle borderGrn"></span>
                                                     </span>
                                                     <small class="mt-2 ml-4">2°</small>
                                                 </label>
                                                 <label class="customcheckboxContainer ml-2">
                                                     <span class="customCheckBox">
-                                                        <input type="radio" id="coursename" name="Numberoptions" value="3">
+                                                        <input type="radio" id="schoolyear" name="Numberoptions" value="3">
                                                         <span class="checkmark rounded-circle borderGrn"></span>
                                                     </span>
                                                     <small class="mt-2 ml-4">3°</small>
                                                 </label>
                                                 <label class="customcheckboxContainer ml-2">
                                                     <span class="customCheckBox">
-                                                        <input type="radio" id="coursename" name="Numberoptions" value="4">
+                                                        <input type="radio" id="schoolyear" name="Numberoptions" value="4">
                                                         <span class="checkmark rounded-circle borderGrn"></span>
                                                     </span>
                                                     <small class="mt-2 ml-4">4°</small>
                                                 </label>
                                                 <label class="customcheckboxContainer ml-2">
                                                     <span class="customCheckBox">
-                                                        <input type="radio" id="coursename" name="Numberoptions" value="5">
+                                                        <input type="radio" id="schoolyear" name="Numberoptions" value="5">
                                                         <span class="checkmark rounded-circle borderGrn"></span>
                                                     </span>
                                                     <small class="mt-2 ml-4">5°</small>
@@ -241,15 +241,15 @@
                                             </div>
                                             <div class="form-group-mb-0">
                                                 <label for="" class="mt-3">Media voti della pagella precedente</label>
-                                                <input type="text" name="avg_vote" class="form-control w-75 shadow-none">
+                                                <input type="text" name="avg_vote" class="form-control w-75 shadow-none" required>
                                             </div>
                                             <div class="form-group mb-0">
                                                 <label for="" class="mt-3">Hai delle passioni/attività extracurricolari di cui ci vuoi parlare?</label> <br>
-                                                <textarea name="passions" id="" cols="30" rows="6" class="form-control w-75 shadow-none"></textarea>
+                                                <textarea name="passions" id="" cols="30" rows="6" class="form-control w-75 shadow-none" required></textarea>
                                             </div>
                                             <div class="form-group-mb-0">
                                                 <label for="" class="mt-3">Scrivici un contatto mail di uno dei tuoi genitori</label>
-                                                <input type="text" name="parent_mail" class="form-control w-75 shadow-none">
+                                                <input type="email" name="parent_mail" class="form-control w-75 shadow-none" required>
                                             </div>
 
                                         </div>
