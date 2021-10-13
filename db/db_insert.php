@@ -2,15 +2,9 @@
       session_start();
       include "db_connection.php";
 
-      $name = $_SESSION['name'];
-      $surname = $_SESSION['surname'];
-      $email = $_SESSION['email'];
-      $number = $_REQUEST['phone'];
-      $school = $_REQUEST['school'];
-      $school_year = $_REQUEST['Numberoptions'];
-      $avg_vote = $_REQUEST['avg_vote'];
-      $passions = $_REQUEST['passions'];
-      $parent_mail = $_REQUEST['parent_mail'];
+      $name = $_REQUEST['name'];
+      $surname = $_REQUEST['surname'];
+      $email = $_REQUEST['email'];
 
       $sql = "INSERT INTO users (name, surname, email, number, school, school_year, avg_vote, passions, parent_mail) VALUES ('$name','$surname','$email','$number','$school','$school_year','$avg_vote','$passions','$parent_mail')";
 

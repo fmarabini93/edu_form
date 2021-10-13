@@ -349,9 +349,12 @@ body,
 .formInputs input[type="text"],
 .formInputs input[type="tel"] {
     /* width: 250px; */
-    border: 1px solid rgba(48, 40, 78, 0.83) !important;
     border-radius: 8px;
-    color: #30284E !important;
+}
+
+.form-control:focus {
+    border: none;
+    box-shadow: 0 0 8px #28a745;
 }
 
 textarea {
